@@ -104,7 +104,7 @@ app.all('/player/growid/checkToken', (req, res) => {
 });
 
 app.get('/favicon.:ext', function (req, res) {
-  res.send('');
+  res.sendFile(path.join(__dirname, 'public', 'favicon.ico'));
 });
 
 app.get('/', function (req, res) {
