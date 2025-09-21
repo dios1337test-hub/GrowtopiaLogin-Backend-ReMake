@@ -74,12 +74,10 @@ app.all('/player/growid/checkToken', (req, res) => {
     const { refreshToken, clientData } = req.body;
 
     if (!refreshToken || !clientData) {
-      return res
-        .status(400)
-        .send({
-          status: 'error',
-          message: 'Missing refreshToken or clientData',
-        });
+      return res.status(400).send({
+        status: 'error',
+        message: 'Missing refreshToken or clientData',
+      });
     }
 
     let decodeRefreshToken = Buffer.from(refreshToken, 'base64').toString(
@@ -103,6 +101,10 @@ app.all('/player/growid/checkToken', (req, res) => {
   } catch (error) {
     res.status(500).send({ status: 'error', message: 'Internal Server Error' });
   }
+});
+
+app.get('/favicon.:ext', function (req, res) {
+  res.send('');
 });
 
 app.get('/', function (req, res) {
