@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const rateLimiter = require('express-rate-limit');
 const compression = require('compression');
+const path = require('path');
 
 app.use(
   compression({
