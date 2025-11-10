@@ -61,8 +61,10 @@ app.all('/player/growid/login/validate', (req, res) => {
   const growId = req.body.growId;
   const password = req.body.password;
 
+  const server_name = "DayPs";
+
   const token = Buffer.from(
-    `_token=${_token}&growId=${growId}&password=${password}`,
+    `_token=${_token}&nameServer=${server_name}&growId=${growId}&password=${password}`
   ).toString('base64');
 
   res.send(
